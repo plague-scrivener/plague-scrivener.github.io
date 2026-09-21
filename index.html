@@ -3,88 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的博客</title>
+<title>小说标题</title>
 <style>
-/* 基础重置 */
-* {margin: 0; padding: 0; box-sizing: border-box;}
-body {background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 14px; line-height: 1.6;}
-a {color: #000099; text-decoration: none;}
-a:hover {text-decoration: underline;}
-a:visited {color: #464646;}
+/* 全局重置 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* 布局容器 */
-.wrapper {display: flex; max-width: 1000px; margin: 0 auto; padding: 20px 15px;}
+/* 
+  字体：优先使用各平台最优中文阅读字体
+  字号：18px（中文长文黄金尺寸，不大不小）
+  行高：1.8（小说阅读最佳行距）
+*/
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 60px 20px;
+}
 
-/* 左侧导航 */
-.sidebar {width: 120px; flex-shrink: 0; margin-right: 30px;}
-.sidebar ul {list-style: none;}
-.sidebar li {margin-bottom: 12px;}
-.sidebar a {font-size: 13px;}
+/* 容器：限制宽度，居中，模拟书本阅读区 */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
 
-/* 主内容区 */
-.main {flex-grow: 1; max-width: 600px;}
-.header {margin-bottom: 30px;}
-.header h1 {font-size: 24px; font-weight: normal; margin-bottom: 5px;}
-.header .subtitle {font-size: 13px; color: #666;}
+/* 标题 */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
 
-/* 推荐区 */
-.recommend {margin-bottom: 30px; padding: 15px; background: #f9f9f9; border-radius: 4px;}
-.recommend p {margin-bottom: 8px; font-size: 13px;}
-.recommend a {font-weight: 500;}
+/* 作者 */
+.author {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 60px;
+}
 
-/* 文章列表 */
-.article-list {list-style: none;}
-.article-item {display: flex; align-items: center; margin-bottom: 12px;}
-.article-icon {width: 12px; height: 14px; background: #eee; margin-right: 10px; flex-shrink: 0;}
-.article-title {font-size: 14px;}
+/* 索引列表 */
+.index {
+  list-style: none;
+}
+
+.index li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+}
+
+/* 章节链接 */
+.index a {
+  color: #1a1a1a;
+  text-decoration: none;
+  flex-grow: 1;
+}
+
+.index a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 发布时间 */
+.date {
+  font-size: 14px;
+  color: #999;
+  margin-left: 20px;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 </style>
 </head>
 <body>
-<div class="wrapper">
-<!-- 左侧导航 -->
-<aside class="sidebar">
-<ul>
-<li><a href="/">首页</a></li>
-<li><a href="/articles.html">全部文章</a></li>
-<li><a href="/about.html">关于我</a></li>
-<li><a href="/projects.html">项目作品</a></li>
-<li><a href="/links.html">友链</a></li>
-</ul>
-</aside>
-
-<!-- 主内容 -->
-<main class="main">
-<!-- 顶部标题 -->
-<header class="header">
-<h1>我的博客</h1>
-<p class="subtitle">记录思考、技术与生活</p>
-</header>
-
-<!-- 推荐引导 -->
-<div class="recommend">
-<p>初次来访可优先阅读：</p>
-<p><a href="/posts/best-1.html">我写过最好的3篇文章</a></p>
-<p><a href="/posts/core-view.html">我的核心观点汇总</a></p>
-<p><a href="/posts/tools.html">常用工具推荐</a></p>
-</div>
-
-<!-- 文章列表 -->
-<ul class="article-list">
-<li class="article-item">
-<span class="article-icon"></span>
-<a href="/posts/2024-05-01.html" class="article-title">2024年5月1日：关于XX的思考</a>
-</li>
-<li class="article-item">
-<span class="article-icon"></span>
-<a href="/posts/2024-04-20.html" class="article-title">如何高效做XX</a>
-</li>
-<li class="article-item">
-<span class="article-icon"></span>
-<a href="/posts/2024-04-10.html" class="article-title">读《XX》有感</a>
-</li>
-<!-- 更多文章按此格式添加 -->
-</ul>
-</main>
+<div class="container">
+  <h1>我的小说标题</h1>
+  <p class="author">作者：你的笔名</p>
+  
+  <ul class="index">
+    <li>
+      <a href="chapter-1.html">第一章　起始</a>
+      <span class="date">2024-05-01</span>
+    </li>
+    <li>
+      <a href="chapter-2.html">第二章　转折</a>
+      <span class="date">2024-05-03</span>
+    </li>
+    <li>
+      <a href="chapter-3.html">第三章　深渊</a>
+      <span class="date">2024-05-06</span>
+    </li>
+  </ul>
 </div>
 </body>
 </html>
