@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>我的网站首页</title>
- <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的博客</title>
+<style>
+/* 基础重置 */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 14px; line-height: 1.6;}
+a {color: #000099; text-decoration: none;}
+a:hover {text-decoration: underline;}
+a:visited {color: #464646;}
+
+/* 布局容器 */
+.wrapper {display: flex; max-width: 1000px; margin: 0 auto; padding: 20px 15px;}
+
+/* 左侧导航 */
+.sidebar {width: 120px; flex-shrink: 0; margin-right: 30px;}
+.sidebar ul {list-style: none;}
+.sidebar li {margin-bottom: 12px;}
+.sidebar a {font-size: 13px;}
+
+/* 主内容区 */
+.main {flex-grow: 1; max-width: 600px;}
+.header {margin-bottom: 30px;}
+.header h1 {font-size: 24px; font-weight: normal; margin-bottom: 5px;}
+.header .subtitle {font-size: 13px; color: #666;}
+
+/* 推荐区 */
+.recommend {margin-bottom: 30px; padding: 15px; background: #f9f9f9; border-radius: 4px;}
+.recommend p {margin-bottom: 8px; font-size: 13px;}
+.recommend a {font-weight: 500;}
+
+/* 文章列表 */
+.article-list {list-style: none;}
+.article-item {display: flex; align-items: center; margin-bottom: 12px;}
+.article-icon {width: 12px; height: 14px; background: #eee; margin-right: 10px; flex-shrink: 0;}
+.article-title {font-size: 14px;}
+</style>
 </head>
 <body>
- <!-- 导航栏 -->
- <nav>
-   <ul>
-     <li><a href="#">首页</a></li>
-     <li><a href="#">产品</a></li>
-     <li><a href="#">服务</a></li>
-     <li><a href="#">关于我们</a></li>
-     <li><a href="#">联系我们</a></li>
-   </ul>
- </nav>
- <!-- 轮播图 -->
- <div id="carousel">
-   <img src="image1.jpg" alt="图片1" class="active">
-   <img src="image2.jpg" alt="图片2">
-   <img src="image3.jpg" alt="图片3">
- </div>
- <!-- 内容板块 -->
- <section id="products">
-   <h2>热门产品</h2>
-   <div class="product">
-     <img src="product1.jpg" alt="产品1">
-     <h3>产品1</h3>
-     <p>产品1描述...</p>
-   </div>
- </section>
- <!-- 页脚 -->
- <footer>
-   <p>© 2024 我的公司. 保留所有权利。</p>
- </footer>
- <script src="script.js"></script>
+<div class="wrapper">
+<!-- 左侧导航 -->
+<aside class="sidebar">
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/articles.html">全部文章</a></li>
+<li><a href="/about.html">关于我</a></li>
+<li><a href="/projects.html">项目作品</a></li>
+<li><a href="/links.html">友链</a></li>
+</ul>
+</aside>
+
+<!-- 主内容 -->
+<main class="main">
+<!-- 顶部标题 -->
+<header class="header">
+<h1>我的博客</h1>
+<p class="subtitle">记录思考、技术与生活</p>
+</header>
+
+<!-- 推荐引导 -->
+<div class="recommend">
+<p>初次来访可优先阅读：</p>
+<p><a href="/posts/best-1.html">我写过最好的3篇文章</a></p>
+<p><a href="/posts/core-view.html">我的核心观点汇总</a></p>
+<p><a href="/posts/tools.html">常用工具推荐</a></p>
+</div>
+
+<!-- 文章列表 -->
+<ul class="article-list">
+<li class="article-item">
+<span class="article-icon"></span>
+<a href="/posts/2024-05-01.html" class="article-title">2024年5月1日：关于XX的思考</a>
+</li>
+<li class="article-item">
+<span class="article-icon"></span>
+<a href="/posts/2024-04-20.html" class="article-title">如何高效做XX</a>
+</li>
+<li class="article-item">
+<span class="article-icon"></span>
+<a href="/posts/2024-04-10.html" class="article-title">读《XX》有感</a>
+</li>
+<!-- 更多文章按此格式添加 -->
+</ul>
+</main>
+</div>
 </body>
 </html>
